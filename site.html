@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Library</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #121212;
+            --card: #1e1e1e;
+            --primary: #4f8cff;
+            --text: #e4e4e4;
+            --muted: #a0a0a0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background-color: var(--bg);
+            color: var(--text);
+        }
+
+        header {
+            background: #1a1a1a;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            background: #181818;
+            padding: 10px;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        main {
+            padding: 30px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h1, h2, h3 {
+            color: white;
+        }
+
+        /* Cards */
+        .book-card {
+            background: var(--card);
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        img {
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        a {
+            color: var(--primary);
+        }
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #222;
+        }
+
+        tr:nth-child(even) {
+            background: #1a1a1a;
+        }
+
+        /* Form */
+        form {
+            background: var(--card);
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 8px;
+            background: #2a2a2a;
+            color: white;
+        }
+
+        input[type="submit"] {
+            background: var(--primary);
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background: #3a6fe0;
+            transform: scale(1.03);
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #1a1a1a;
+            border-top: 1px solid #2a2a2a;
+            color: var(--muted);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>My Book Library</h1>
+    <p>Explore and manage your favorite books</p>
+</header>
+
+<nav>
+    <a href="#books">Books</a>
+    <a href="#prices">Prices</a>
+    <a href="#requests">Requests</a>
+</nav>
+
+<main>
+    <section id="books">
+        <h2>Featured Books</h2>
+
+        <div class="book-card">
+            <h3>The Great Gatsby</h3>
+            <div style="display: flex; gap: 20px; align-items: flex-center;">
+                <img src="/The_Great_Gatsby.jpg" alt="Book Cover" height="327" width="220">
+                <p>
+                    Jay Gatsby, the knight who reigns over West Egg, the host of the nights without respite, 
+                    but also the triumphant marked by the tragic if not an unintended solitude, is the archetype 
+                    of those twenties that began with Prohibition and ran through gangsterism and organized political corruption. 
+                    Protagonist of a decade that would culminate in the catastrophe of 1929, his image of splendour does nothing 
+                    but announce an inevitable drama. Triumph of perpetual youth, brilliance animated by excess, were also the 
+                    constants of the life of Francis Scott Fitzgerald, who offers us in The Great Gatsby one of his greatest works.
+                </p>
+            </div>
+            <p>
+                <a href="https://en.wikipedia.org/wiki/The_Great_Gatsby" target="_blank">View details</a>
+            </p>
+        </div>
+
+        <div class="book-card">
+            <h3>1984</h3>
+            <div style="display: flex; gap: 20px; align-items: flex-center;">
+                <img src="/1984.jpg" alt="Book Cover" height="327" width="220">
+                <p>
+                    London, 1984: Winston Smith decides to rebel against a totalitarian government that controls 
+                    every movement of its citizens and punishes even those who commit crimes with thought. Aware 
+                    of the terrible consequences that dissent can have, Winston joins the ambiguous Brotherhood through
+                    the intermediary of leader O'Brien. Little by little, however, our protagonist is realizing that neither 
+                    the Brotherhood nor O'Brien are what they appear to be, and that rebellion, after all, may be an unattainable goal. 
+                    For its magnificent analysis of power and the relationships and dependencies it creates in individuals, 1984 is one 
+                    of the most disturbing and attractive novels of this century.
+                </p>
+            </div>
+            <p>
+                <a href="https://en.wikipedia.org/wiki/Nineteen_Eighty-Four" target="_blank">View details</a>
+            </p>
+        </div>
+
+        <div class="book-card">
+            <h3>Dune</h3>
+            <div style="display: flex; gap: 20px; align-items: flex-center;">
+                <img src="/Dune.jpg" alt="Book Cover" height="327" width="220">
+                <p>
+                    On the desert planet Arrakis, water is the most precious commodity and to mourn the dead, the symbol of maximum prodigality. 
+                    But something makes Arrakis a strategic piece for the interests of the Emperor, the Great Houses and the Guild, the three great 
+                    powers of the galaxy. Arrakis is the only known origin of the melange, a precious spice and one of the most coveted goods in the universe.
+                    Duke Leto Atreides is assigned to rule this inhospitable world, inhabited by the untamed Fremen and monstrous sand worms hundreds of meters long. 
+                    However, when the family is betrayed, his son and heir, Paul, will embark on a journey to a destination greater than he could ever have dreamed of.
+                    Fascinating mix of adventure, mysticism, political intrigue and environmentalism, Dune became, from the moment of its publication, a cult phenomenon 
+                    and the greatest science-fiction epic of all time.
+                </p>
+            </div>
+            <p>
+                <a href="https://en.wikipedia.org/wiki/Dune_(novel)" target="_blank">View details</a>
+            </p>
+        </div>
+    </section>
+
+    <section id="prices">
+        <h2>Library Catalog</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>The Great Gatsby</td>
+                    <td>F. Scott Fitzgerald</td>
+                    <td>$12.99</td>
+                </tr>
+                <tr>
+                    <td>1984</td>
+                    <td>George Orwell</td>
+                    <td>$14.99</td>
+                </tr>
+                <tr>
+                    <td>Dune</td>
+                    <td>Frank Herbert</td>
+                    <td>$19.99</td>
+                </tr>
+                <tr>
+                    <td>To Kill a Mockingbird</td>
+                    <td>Harper Lee</td>
+                    <td>$16.99</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="requests">
+        <h2>Request a Book</h2>
+        <form>
+            <label>Name:</label>
+            <input type="text" name="name">
+
+            <label>Book Title:</label>
+            <input type="text" name="book">
+
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 Book Library</p>
+</footer>
+
+</body>
+</html>

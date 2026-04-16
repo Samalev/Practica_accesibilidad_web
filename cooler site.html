@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Grand Archive</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0f172a; /* Azul noche profundo */
+            --card: #1e293b; /* Azul pizarra */
+            --primary: #38bdf8; /* Cian brillante */
+            --accent: #fbbf24; /* Dorado para detalles */
+            --text: #f1f5f9;
+            --muted: #94a3b8;
+            --glass: rgba(255, 255, 255, 0.03);
+        }
+
+        * {
+            box-sizing: border-box;
+            transition: all 0.3s ease; /* Animación suave para todo */
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background-color: var(--bg);
+            background-image: radial-gradient(circle at top right, #1e293b, #0f172a); /* Fondo vivo */
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* --- Header & Nav --- */
+        header {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px); /* Efecto cristal */
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin: 0;
+            background: linear-gradient(to right, #38bdf8, #fbbf24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 15px;
+        }
+
+        nav a {
+            color: var(--muted);
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+            text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+        }
+
+        nav a:focus {
+            color: var(--accent);
+        }
+
+        /* --- Layout --- */
+        main {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        section {
+            margin-bottom: 60px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            border-left: 4px solid var(--accent);
+            padding-left: 15px;
+            margin-bottom: 30px;
+        }
+
+        /* --- Book Cards --- */
+        .book-card {
+            background: var(--card);
+            padding: 25px;
+            border-radius: 20px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .book-card:hover {
+            transform: translateY(-10px) scale(1.01);
+            border-color: var(--primary);
+            box-shadow: 0 15px 40px rgba(56, 189, 248, 0.2);
+        }
+
+        .book-card img {
+            border-radius: 12px;
+            box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+        }
+
+        .book-info h3 {
+            margin-top: 0;
+            color: var(--accent);
+        }
+
+        .book-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 20px;
+            background: var(--glass);
+            border: 1px solid var(--primary);
+            border-radius: 30px;
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .book-link:hover {
+            background: var(--primary);
+            color: var(--bg);
+        }
+
+        .book-link:focus {
+            color: var(--accent);
+        }
+
+        /* --- Tabla --- */
+        .table-container {
+            overflow-x: auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card);
+        }
+
+        th {
+            background: rgba(255,255,255,0.05);
+            color: var(--accent);
+            padding: 18px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        tr:hover {
+            background: rgba(56, 189, 248, 0.1);
+        }
+
+        /* --- Formulario --- */
+        form {
+            background: var(--card);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            max-width: 500px;
+            margin: auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            background: #000621;
+            color: white;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: var(--accent);
+            box-shadow: #000621;
+        }
+
+        input::placeholder {
+            color: #609090;
+        }
+
+        input[type="submit"] {
+            background: linear-gradient(to bottom, var(--primary), #51c1f5);
+            color: var(--bg);
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            border: 1px;;
+            padding: 15px;
+            margin-top: 10px;
+        }
+
+        input[type="submit"]:hover {
+            letter-spacing: 2px;
+            filter: brightness(1.1);
+        }
+
+        input[type="submit"]:focus {
+            background: var(--accent);
+            color: var(--bg);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: #070b14;
+            color: var(--muted);
+            font-size: 0.8rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .book-card {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>The Grand Archive</h1>
+    <nav>
+        <a href="#books">Collection</a>
+        <a href="#prices">Catalog</a>
+        <a href="#requests">Request Service</a>
+    </nav>
+</header>
+
+<main>
+    <div id="books">
+        <h2>Featured Collections</h2>
+
+        <div class="book-card">
+            <img src="/The_Great_Gatsby.jpg" height="280" width="190" alt="">
+            <div class="book-info">
+                <h3>The Great Gatsby</h3>
+                <p>
+                    Jay Gatsby, the knight who reigns over West Egg, the host of the nights without respite...
+                    A masterpiece of the Roaring Twenties that captures the essence of the American Dream.
+                </p>
+                <a href="https://en.wikipedia.org/wiki/The_Great_Gatsby" target="_blank" class="book-link">Explore Details</a>
+            </div>
+        </div>
+
+        <div class="book-card">
+            <img src="/1984.jpg" height="280" width="190" alt="">
+            <div class="book-info">
+                <h3>1984</h3>
+                <p>
+                    London, 1984: Winston Smith decides to rebel against a totalitarian government... 
+                    A chillingly prophetic vision of a world under constant surveillance.
+                </p>
+                <a href="https://en.wikipedia.org/wiki/Nineteen_Eighty-Four" target="_blank" class="book-link">Explore Details</a>
+            </div>
+        </div>
+
+        <div class="book-card">
+            <img src="/Dune.jpg" height="280" width="190" alt="">
+            <div class="book-info">
+                <h3>Dune</h3>
+                <p>
+                    On the desert planet Arrakis, water is the most precious commodity... 
+                    The greatest science-fiction epic of all time, blending politics, ecology, and myth.
+                </p>
+                <a href="https://en.wikipedia.org/wiki/Dune_(novel)" target="_blank" class="book-link">Explore Details</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="prices">
+        <h2>Library Catalog</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">Author</th>
+                        <th scope="col">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr scope="row">
+                        <td>The Great Gatsby</td>
+                        <td>F. Scott Fitzgerald</td>
+                        <td>$12.99</td>
+                    </tr>
+                    <tr scope="row">
+                        <td>1984</td>
+                        <td>George Orwell</td>
+                        <td>$14.99</td>
+                    </tr>
+                    <tr scope="row">
+                        <td>Dune</td>
+                        <td>Frank Herbert</td>
+                        <td>$19.99</td>
+                    </tr>
+                    <tr scope="row">
+                        <td>To Kill a Mockingbird</td>
+                        <td>Harper Lee</td>
+                        <td>$16.99</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="requests">
+        <h2>Reserve a Copy</h2>
+        <form>
+            <label for="name">Full Name</label>
+            <input type="text" name="name" id="name" placeholder="Ej. John Doe">
+
+            <label for="book">Book Title</label>
+            <input type="text" name="book" id="book" placeholder="Which book are you looking for?">
+
+            <input type="submit" alt="Send request" value="Send Request">
+        </form>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2026 The Grand Archive | Designed for Bibliophiles</p>
+</footer>
+
+</body>
+</html>
