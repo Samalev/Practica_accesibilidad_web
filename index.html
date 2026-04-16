@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +9,10 @@
 
     <style>
         :root {
-            --bg: #0f172a; /* Azul noche profundo */
-            --card: #1e293b; /* Azul pizarra */
-            --primary: #38bdf8; /* Cian brillante */
-            --accent: #fbbf24; /* Dorado para detalles */
+            --bg: #0f172a;
+            --card: #1e293b;
+            --primary: #38bdf8;
+            --accent: #fbbf24;
             --text: #f1f5f9;
             --muted: #94a3b8;
             --glass: rgba(255, 255, 255, 0.03);
@@ -20,7 +20,7 @@
 
         * {
             box-sizing: border-box;
-            transition: all 0.3s ease; /* Animación suave para todo */
+            transition: all 0.3s ease;
         }
 
         html {
@@ -31,7 +31,7 @@
             font-family: 'Inter', sans-serif;
             margin: 0;
             background-color: var(--bg);
-            background-image: radial-gradient(circle at top right, #1e293b, #0f172a); /* Fondo vivo */
+            background-image: radial-gradient(circle at top right, #1e293b, #0f172a);
             color: var(--text);
             line-height: 1.6;
         }
@@ -39,7 +39,7 @@
         /* --- Header & Nav --- */
         header {
             background: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(10px); /* Efecto cristal */
+            backdrop-filter: blur(10px);
             padding: 40px 20px;
             text-align: center;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -264,64 +264,64 @@
 <body>
 
 <header>
-    <h1>The Grand Archive</h1>
+    <span lang="en"><h1>The Grand Archive</h1></span>
     <nav>
-        <a href="#books">Collection</a>
-        <a href="#prices">Catalog</a>
-        <a href="#requests">Request Service</a>
+        <a href="#books">Colección</a>
+        <a href="#prices">Catálogo</a>
+        <a href="#requests">Solicitar servicio</a>
     </nav>
 </header>
 
 <main>
     <div id="books">
-        <h2>Featured Collections</h2>
+        <h2>Colecciones destacadas</h2>
 
         <div class="book-card">
-            <img src="/img/The_Great_Gatsby.jpg" height="280" width="190" alt="">
+            <img src="/img/The_Great_Gatsby.jpg" height="280" width="190" alt="Portada de The Great Gatsby">
             <div class="book-info">
-                <h3>The Great Gatsby</h3>
+                <span lang="en"><h3>The Great Gatsby</h3></span>
                 <p>
-                    Jay Gatsby, the knight who reigns over West Egg, the host of the nights without respite...
-                    A masterpiece of the Roaring Twenties that captures the essence of the American Dream.
+                    Jay Gatsby, el caballero que reina sobre West Egg, el anfitrión de las noches sin descanso...
+                    Una obra maestra de los locos años veinte que captura la esencia del sueño americano.
                 </p>
-                <a href="https://en.wikipedia.org/wiki/The_Great_Gatsby" target="_blank" class="book-link">Explore Details</a>
+                <a href="https://en.wikipedia.org/wiki/The_Great_Gatsby" target="_blank" class="book-link">Ver detalles</a>
             </div>
         </div>
 
         <div class="book-card">
-            <img src="/img/1984.jpg" height="280" width="190" alt="">
+            <img src="/img/1984.jpg" height="280" width="190" alt="Portada de 1984">
             <div class="book-info">
                 <h3>1984</h3>
                 <p>
-                    London, 1984: Winston Smith decides to rebel against a totalitarian government... 
-                    A chillingly prophetic vision of a world under constant surveillance.
+                    Londres, 1984: Winston Smith decide rebelarse contra un gobierno totalitario...
+                    Una visión escalofriante y profética de un mundo bajo vigilancia constante.
                 </p>
-                <a href="https://en.wikipedia.org/wiki/Nineteen_Eighty-Four" target="_blank" class="book-link">Explore Details</a>
+                <a href="https://en.wikipedia.org/wiki/Nineteen_Eighty-Four" target="_blank" class="book-link">Ver detalles</a>
             </div>
         </div>
 
         <div class="book-card">
-            <img src="/img/Dune.jpg" height="280" width="190" alt="">
+            <img src="/img/Dune.jpg" height="280" width="190" alt="Portada de Dune">
             <div class="book-info">
-                <h3>Dune</h3>
+                <span lang="en"><h3>Dune</h3></span>
                 <p>
-                    On the desert planet Arrakis, water is the most precious commodity... 
-                    The greatest science-fiction epic of all time, blending politics, ecology, and myth.
+                    En el planeta desértico Arrakis, el agua es el bien más preciado...
+                    La epopeya de ciencia ficción más grande de todos los tiempos, que mezcla política, ecología y mito.
                 </p>
-                <a href="https://en.wikipedia.org/wiki/Dune_(novel)" target="_blank" class="book-link">Explore Details</a>
+                <a href="https://en.wikipedia.org/wiki/Dune_(novel)" target="_blank" class="book-link">Ver detalles</a>
             </div>
         </div>
     </div>
 
     <div id="prices">
-        <h2>Library Catalog</h2>
+        <h2>Catálogo de la biblioteca</h2>
         <div class="table-container">
             <table>
                 <thead>
                     <tr>
-                        <th scope="col">Title</th>
-                        <th scope="col">Author</th>
-                        <th scope="col">Price</th>
+                        <th scope="col">Título</th>
+                        <th scope="col">Autor</th>
+                        <th scope="col">Precio</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -351,21 +351,21 @@
     </div>
 
     <div id="requests">
-        <h2>Reserve a Copy</h2>
+        <h2>Reservar un ejemplar</h2>
         <form>
-            <label for="name">Full Name</label>
-            <input type="text" name="name" id="name" placeholder="Ej. John Doe">
+            <label for="name">Nombre completo</label>
+            <input type="text" name="name" id="name" placeholder="Ej. Juan Pérez">
 
-            <label for="book">Book Title</label>
-            <input type="text" name="book" id="book" placeholder="Which book are you looking for?">
+            <label for="book">Título del libro</label>
+            <input type="text" name="book" id="book" placeholder="Ej. Dune">
 
-            <input type="submit" alt="Send request" value="Send Request">
+            <input type="submit" alt="Enviar solicitud" value="Enviar solicitud">
         </form>
     </div>
 </main>
 
 <footer>
-    <p>&copy; 2026 The Grand Archive | Designed for Bibliophiles</p>
+    <p>&copy; 2026 The Grand Archive | Diseñado para bibliófilos</p>
 </footer>
 
 </body>
